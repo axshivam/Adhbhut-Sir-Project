@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% if user.is_authenticated %}
+  Hi {{ user.username }}!
+  <p><a href="{% url 'logout' %}">logout</a></p>
+{% else %}
+  <p>You are not logged in. <a href="{% url 'login' %}">Login</a> here.</p>
+  <p>New User? <a href="{% url 'signup' %}">Sign Up</a> here.</p>
+  {% endif %}
+  <h2 class="card-title">Django File Upload</h2>
+ <li class="card-text">Upload the pdf files.</li>
+    <li class="card-text">Save the files.</li>
+    <li class="card-text">View uploaded files with cover and download option.</li>
+<br>
+  <!-- <p class="card-text">
+    Find the code on <a href="https://github.com/vinaysomawat/django-file-handle">GitHub</a> or
+    read the <a href="https://medium.com/quick-code/django-distributing-files-among-users-efa729598ba4">Blog Post</a>.
+  </p>
+  <p class="card-text">
+    Vinay Somawat<br>
+    <a href="https://vinaysomawat.github.io/">@somawatvinay</a>
+  </p> -->
+{% endblock %}
